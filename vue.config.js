@@ -30,6 +30,7 @@ module.exports = {
       }
     }
   },
+  // 打包时起作用
   chainWebpack: config => {
     // 配置别名
     config.resolve.alias
@@ -40,8 +41,23 @@ module.exports = {
       .set('utils', resolve('src/utils'))
       .set('modules', resolve('src/modules'))
       .set('router', resolve('src/router'))
-      .set('widgets', resolve('src/widgets'))
-      .set('mixins', resolve('src/mixins'))
+      // .set('widgets', resolve('src/widgets'))
+      // .set('mixins', resolve('src/mixins'))
+  },
+  // css: {
+  //   loaderOptions: {
+  //     scss: {
+  //       additionalData: '@import "~@/styles/element-variables.scss";'
+  //     }
+  //   }
+  // }
+  pluginOptions: {
+    'style-resources-loader': {
+      preProcessor: 'scss',
+      patterns: [
+        resolve('src/styles/element-variables.scss'),
+        resolve('src/styles/mixin.scss')
+      ]
+    }
   }
-
 }
