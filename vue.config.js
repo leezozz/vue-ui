@@ -55,6 +55,7 @@ module.exports = {
     'style-resources-loader': {
       preProcessor: 'scss',
       patterns: [
+        // 这个是绝对路径,不能使用 alias中配置的别名路径，如@表示的src
         resolve('src/styles/element-variables.scss'),
         resolve('src/styles/mixin.scss')
       ]
