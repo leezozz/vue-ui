@@ -14,6 +14,7 @@
   </div>
 </template>
 <script>
+// import Home from 'store/'
 export default ({
   name: 'About',
   components: {

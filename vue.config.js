@@ -41,8 +41,8 @@ module.exports = {
       .set('utils', resolve('src/utils'))
       .set('modules', resolve('src/modules'))
       .set('router', resolve('src/router'))
-      // .set('widgets', resolve('src/widgets'))
-      // .set('mixins', resolve('src/mixins'))
+      .set('widgets', resolve('src/widgets'))
+      .set('mixins', resolve('src/mixins'))
   },
   // css: {
   //   loaderOptions: {
