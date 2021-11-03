@@ -1,10 +1,4 @@
 <script>
-// import {
-//   requiredRules,
-//   validatorRules,
-//   imageListRules,
-//   requiredRadioRules
-// } from '@/utils/formRules'
 import {
   requiredRules,
   validatorRules,

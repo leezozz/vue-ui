@@ -34,8 +34,8 @@ module.exports = {
     ecmaFeatures: {
       legacyDecorators: true
     },
-    // eslint解析器 ???
-    // parser: '@babel/eslint-parser'
+    // eslint解析器 
+    parser: '@babel/eslint-parser'
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
