@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "module": "commonjs",
+    // 路径提示
     "paths": {
       "@/*": ["./src/*"],
       "store/*": ["./src/store/*"],
