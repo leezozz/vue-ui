@@ -1,9 +1,6 @@
 // 参考官网：https://cli.vuejs.org/zh/config/#%E5%85%A8%E5%B1%80-cli-%E9%85%8D%E7%BD%AE
 const path = require('path')
 const resolve = (dir) => path.join(__dirname, dir)
-// function resolve (dir) {
-//   return path.join(__dirname, dir)// path.join(__dirname)设置绝对路径
-// }
 module.exports = {
   // 生产环境是否要生成 sourceMap
   productionSourceMap: false,

@@ -1,4 +1,7 @@
-import { getDemoTestList } from '@/modules/DemoTest/api'
+import {
+  getDemoTestList,
+  getDemoTestData
+} from '@/modules/DemoTest/api'
 import MUTATION from '@/modules/DemoTest/store/mutations-type'
 import mixin from '@/store/utils/mixin'
 
@@ -28,6 +31,16 @@ const DemoTestModule = {
       console.log(result)
       commit(MUTATION.SET_DEMO_LIST, result)
       return result
+    },
+    async getDemoTestData ({ commit }, params) {
+      const result = await getDemoTestData(params)
+      return {
+        error: 0,
+        data: {
+          a: 1,
+          b: 2
+        }
+      }
     }
   },
   mutations: {

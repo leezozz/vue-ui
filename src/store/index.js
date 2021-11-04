@@ -6,7 +6,7 @@ import DemoTestModule from '@/modules/DemoTest/store/index'
 // 这里导入每个模块的store.js
 const store = createStore({
   modules: {
-    DemeTest: DemoTestModule
+    DemoTest: DemoTestModule
   },
   plugins // 是个数组
 })

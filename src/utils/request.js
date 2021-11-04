@@ -49,8 +49,8 @@ const codeMessage = {
 // 创建axios实例
 const service = axios.create({
   // api 的 base_url
-  // baseURL: import.meta.env.VITE_BASE_API,
-  baseURL: '/api',
+  // baseURL: process.env.VUE_APP_BASE_API,
+  baseURL: 'http://localhost:8080',
   // 请求超时时间
   timeout: 6000000
 })

@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <div id="nav">
-      <router-link to="/">
+  <div id="nav">
+    <!-- <router-link to="/">
         Home
       </router-link> |
       <router-link to="/about">
         About
       </router-link>
     </div>
+    <router-view /> -->
     <router-view />
   </div>
 </template>
@@ -17,7 +17,6 @@ import {
   defineComponent,
   getCurrentInstance
 } from 'vue'
-// import { useStore } from 'vuex'
 
 export default defineComponent({
   name: 'Xx',
