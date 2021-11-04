@@ -30,3 +30,11 @@ export function deleteDemoTest (demoId) {
     method: 'delete'
   })
 }
+
+export function getDemoTestData (params) {
+  return request({
+    url: '/api/demo_data',
+    method: 'get',
+    params
+  })
+}
