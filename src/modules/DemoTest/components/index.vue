@@ -10,19 +10,6 @@ import {
 } from 'vue'
 import { useStore } from 'vuex'
 
-const useModules = async (store) => {
-  // console.log(store)
-  const getDemoList = computed(() => store.state.DemoTest.demoList)
-  console.log('getDemoList', getDemoList)
-  const { data, error } = await store.dispatch('DemoTest/getDemoTestData')
-  console.log('error', error)
-  console.log('data', data)
-
-  return {
-
-  }
-}
-
 export default defineComponent({
   name: 'Xxx',
   props: {
@@ -34,7 +21,6 @@ export default defineComponent({
     console.log(proxy)
 
     return {
-      ...useModules(store)
     }
   }
 })
