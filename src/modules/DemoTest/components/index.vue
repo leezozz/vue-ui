@@ -4,12 +4,20 @@
 
 <script>
 import {
-  computed,
   defineComponent,
   getCurrentInstance
 } from 'vue'
 import { useStore } from 'vuex'
 
+const useDemoTest = async (store) => {
+  const getData = async () => {
+    const { data } = await store.dispatch('DemoTest/getDemoTestData')
+    console.log('data', data)
+  }
+  getData()
+  return {
+  }
+}
 export default defineComponent({
   name: 'Xxx',
   props: {
@@ -21,6 +29,7 @@ export default defineComponent({
     console.log(proxy)
 
     return {
+      ...useDemoTest(store)
     }
   }
 })

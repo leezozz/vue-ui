@@ -34,13 +34,14 @@ const DemoTestModule = {
     },
     async getDemoTestData ({ commit }, params) {
       const result = await getDemoTestData(params)
-      return {
-        error: 0,
-        data: {
-          a: 1,
-          b: 2
-        }
-      }
+      // return {
+      //   error: 0,
+      //   data: {
+      //     a: 1,
+      //     b: 2
+      //   }
+      // }
+      return result
     }
   },
   mutations: {
