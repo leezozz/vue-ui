@@ -32,9 +32,20 @@ export function deleteDemoTest (demoId) {
 }
 
 export function getDemoTestData (params) {
-  return request({
-    url: '/api/demo_data',
-    method: 'get',
-    params
+  // return request({
+  //   url: '/api/demo_data',
+  //   method: 'get',
+  //   params
+  // })
+
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve({
+        data: {
+          a: 1,
+          b: 2
+        }
+      })
+    }, 2000)
   })
 }
