@@ -1,15 +1,20 @@
-// import Home from '../views/Home.vue'
+import test from '@/modules/Test/test.vue'
 
 const routes = [
-  // {
-  //   path: '/',
-  //   name: 'Home',
-  //   component: Home
-  // },
+  {
+    path: '/',
+    name: 'Test',
+    component: test
+  },
   {
     path: '/demo',
     name: 'demo',
     component: () => import('@/modules/DemoTest/components/index.vue')
+  },
+  {
+    path: '/btn',
+    name: 'Btn',
+    component: () => import('@/widgets/Button/button.vue')
   }
 ]
 

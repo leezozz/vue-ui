@@ -1,8 +1,7 @@
 <template>
-  <div class="my-button-main">
-    <button class="my-button">
-      按钮
-    </button>
+  <div>
+    <h2>test</h2>
+    <my-button>new</my-button>
   </div>
 </template>
 
@@ -14,8 +13,9 @@ import {
 import { useStore } from 'vuex'
 
 export default defineComponent({
-  name: 'MyButton',
-  components: {},
+  name: 'Xx',
+  components: {
+  },
   props: {},
   setup () {
   // Vuex store
@@ -32,9 +32,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.my-button-main {
-  .my-button {
 
-  }
-}
 </style>
