@@ -1,5 +1,3 @@
-# vue-cli-config
-
 ## Project setup
 ```
 npm install
