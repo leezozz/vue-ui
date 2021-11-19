@@ -7,6 +7,7 @@ import Widgets from './widgets'
 import GlobalComponents from '@/components'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
+import './styles/element-variables.scss'
 
 const app = createApp(App)
 

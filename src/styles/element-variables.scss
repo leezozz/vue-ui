@@ -5,41 +5,39 @@
 
 
 /* theme color */
-$--color-primary: #F37021;
-$--color-success: #67c23a;
-$--color-warning: #e6a23c;
-$--color-danger: #f56c6c;
-$--color-info: #909399;
-
-// $--button-font-weight: 400;
-
-// $--color-text-regular: #1f2d3d;
-// $--border-color-light: #dfe4ed;
-// $--border-color-lighter: #e6ebf5;
-// $--table-border: 1px solid #dfe6ec;
-
-// $--colors: (
-//   "primary": (
-//     "base": #F37021,
+// 按需导入，重写覆盖自己所需样式
+// @forward "element-plus/theme-chalk/src/common/var.scss" with (
+//   $colors: (
+//     "primary": (
+//       "base": #F37021,
+//     ),
+//     "success": (
+//       "base":  #67c23a,
+//     ),
+//     "warning": (
+//       "base":  #e6a23c,
+//     ),
+//     "danger": (
+//       "base":  #f56c6c,
+//     ),
+//     "info": (
+//       "base":  #909399,
+//     ),
+    
 //   ),
-//   "success": (
-//     "base": #67c23a,
+//   $text-color: (
+//     'primary': red,
+//     'regular': #606266,
+//     'secondary': #909399,
+//     'placeholder': #c0c4cc,
 //   ),
-//   "warning": (
-//     "base": #e6a23c,
-//   ),
-//   "danger": (
-//     "base": #f56c6c,
-//   ),
-//   "error": (
-//     "base": #db2828,
-//   ),
-//   "info": (
-//     "base": #909399,
+//   $border-radius: (
+//     'base': 4px,
+//     'small': 2px,
+//     'round': 20px,
+//     'circle': 100%,
 //   ),
 // );
 
-// :export {
-//   colorPrimary: $--color-primary;
-// }
 
+// $--color-primary: #17b3a3!default;

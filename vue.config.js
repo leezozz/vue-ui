@@ -44,7 +44,7 @@ module.exports = {
   // css: {
   //   loaderOptions: {
   //     scss: {
-  //       additionalData: '@import "~@/styles/element-variables.scss";'
+  //       additionalData: "@import './src/styles/element-variables.scss';"
   //     }
   //   }
   // }

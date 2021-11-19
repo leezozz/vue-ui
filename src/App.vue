@@ -19,8 +19,8 @@ export default defineComponent({
     // const store = useStore()
 
     // this
-    const { ctx } = getCurrentInstance()
-    console.log(ctx)
+    // const { ctx } = getCurrentInstance()
+    // console.log(ctx)
 
     return {
     }
@@ -28,6 +28,6 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="sass">
+<style lang="sass">
 @import '@/styles/index.scss'
 </style>
