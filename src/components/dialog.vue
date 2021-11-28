@@ -1,54 +1,56 @@
 <template>
-  <transition name="dialog-fade">
-    <!-- @click.self 只有点击自己时才能触发 -->
-    <div
-      v-show="visible"
-      class="my-dialog-overlay"
-      @click.self="handleClose"
-    >
+  <teleport to="body">
+    <transition name="dialog-fade">
+      <!-- @click.self 只有点击自己时才能触发 -->
       <div
-        class="my-dialog"
-        :style="{ width: dialogWidth, marginTop: dialogMarginTop}"
+        v-show="visible"
+        class="my-dialog-overlay"
+        @click.self="handleClose"
       >
-        <!-- header  -->
-        <div class="my-dialog-header">
-          <span
-            class="dialog-header"
-          >
+        <div
+          class="my-dialog"
+          :style="{ width: dialogWidth, marginTop: dialogMarginTop}"
+        >
+          <!-- header  -->
+          <div class="my-dialog-header">
             <span
-              v-if="headerIcon"
-              class="dialog-header-icon"
+              class="dialog-header"
             >
-              <i
-                :class="`my-icon-${headerIcon}`"
-              ></i>
+              <span
+                v-if="headerIcon"
+                class="dialog-header-icon"
+              >
+                <i
+                  :class="`my-icon-${headerIcon}`"
+                ></i>
+              </span>
+              <span class="dialog-header-text">
+                {{ title }}
+              </span>
             </span>
-            <span class="dialog-header-text">
-              {{ title }}
-            </span>
-          </span>
-          <button
-            class="header-icon"
-            @click="handleClose"
-          >
-            <i class="my-icon-close">
-            </i>
-          </button>
-        </div>
-        <!-- body -->
-        <div class="my-dialog-body">
-          <!-- 内容可能是除span以外的其他内容，比如列表等，所以在这里使用插槽，并且不规定插槽内具体的标签  -->
-          <slot
-            class="dialog-body"
-          ></slot>
-        </div>
-        <!-- footer  -->
-        <div class="my-dialog-footer">
-          <slot name="footer"></slot>
+            <button
+              class="header-icon"
+              @click="handleClose"
+            >
+              <i class="my-icon-close">
+              </i>
+            </button>
+          </div>
+          <!-- body -->
+          <div class="my-dialog-body">
+            <!-- 内容可能是除span以外的其他内容，比如列表等，所以在这里使用插槽，并且不规定插槽内具体的标签  -->
+            <slot
+              class="dialog-body"
+            ></slot>
+          </div>
+          <!-- footer  -->
+          <div class="my-dialog-footer">
+            <slot name="footer"></slot>
+          </div>
         </div>
       </div>
-    </div>
-  </transition>
+    </transition>
+  </teleport>
 </template>
 
 <script>
@@ -162,21 +164,36 @@ export default defineComponent({
 }
 
 // 添加过渡动画
+// 进入时动画
 .dialog-fade-enter-active {
   animation: fade .3s;
+  .my-dialog {
+    animation: dialog .3s;
+  }
 }
+// 离开时动画
 .dialog-fade-leave-active {
   animation: fade .3s reverse;
+  .my-dialog {
+    animation: dialog .3s reverse;
+  }
 }
+
 @keyframes fade {
   0% {
     opacity: 0;
-    // transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes dialog {
+  0% {
+    opacity: 0;
     transform: translate3d(0, -20px, 0);
   }
   100% {
     opacity: 1;
-    // transform: translateY(0);
     transform: translate3d(0, 0, 0);
   }
 }
