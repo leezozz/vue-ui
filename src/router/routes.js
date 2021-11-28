@@ -31,6 +31,12 @@ const routes = [
     name: 'TestStop',
     component: () => import('@/modules/Test/testStop.vue')
   },
+  // teleport
+  {
+    path: '/teleport',
+    name: 'TestTeleport',
+    component: () => import('@/modules/Test/testTeleport.vue')
+  },
   {
     path: '/demo',
     name: 'demo',
