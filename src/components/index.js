@@ -3,6 +3,8 @@ import Iconfont from '@/components/IconFont'
 
 import myDialog from '@/components/dialog.vue'
 import myButton from '@/components/button.vue'
+import myInput from '@/components/input.vue'
+import mySwitch from '@/components/switch.vue'
 
 const component = {
   install: function (Vue) {
@@ -10,6 +12,8 @@ const component = {
     Vue.component(Iconfont.name, Iconfont)
     Vue.component(myButton.name, myButton)
     Vue.component(myDialog.name, myDialog)
+    Vue.component(myInput.name, myInput)
+    Vue.component(mySwitch.name, mySwitch)
   }
 }
 

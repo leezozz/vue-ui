@@ -1,4 +1,5 @@
 <template>
+<!-- to 属性就是目标位置。teleport会把其包裹的元素移至to对应的节点下面 -->
   <teleport to="body">
     <transition name="dialog-fade">
       <!-- @click.self 只有点击自己时才能触发 -->
@@ -9,7 +10,7 @@
       >
         <div
           class="my-dialog"
-          :style="{ width: dialogWidth, marginTop: dialogMarginTop}"
+          :style="{ width: width, marginTop: dialogMarginTop}"
         >
           <!-- header  -->
           <div class="my-dialog-header">
@@ -69,7 +70,7 @@ export default defineComponent({
       type: Boolean,
       default: false
     },
-    dialogWidth: {
+    width: {
       type: String,
       default: '500px'
     },

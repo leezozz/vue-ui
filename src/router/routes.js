@@ -13,6 +13,12 @@ const routes = [
     name: 'Dialog',
     component: () => import('@/modules/Test/testDialog.vue')
   },
+  // input
+  {
+    path: '/input',
+    name: 'Input',
+    component: () => import('@/modules/Test/testInput.vue')
+  },
   // sync
   {
     path: '/testSync',
@@ -41,6 +47,18 @@ const routes = [
     path: '/demo',
     name: 'demo',
     component: () => import('@/modules/DemoTest/components/index.vue')
+  },
+  // v-model
+  {
+    path: '/tests',
+    name: 'Tests',
+    component: () => import('@/modules/TestNewSome/Test2.x.vue')
+  },
+  // switch
+  {
+    path: '/switch',
+    name: 'TestSwitch',
+    component: () => import('@/modules/Test/TestSwitch.vue')
   }
 
 ]
