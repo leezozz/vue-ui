@@ -59,6 +59,12 @@ const routes = [
     path: '/switch',
     name: 'TestSwitch',
     component: () => import('@/modules/Test/TestSwitch.vue')
+  },
+  // radio
+  {
+    path: '/radio',
+    name: 'TestRadio',
+    component: () => import('@/modules/Test/TestRadio.vue')
   }
 
 ]
