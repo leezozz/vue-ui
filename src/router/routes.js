@@ -65,6 +65,24 @@ const routes = [
     path: '/radio',
     name: 'TestRadio',
     component: () => import('@/modules/Test/TestRadio.vue')
+  },
+  // radio-group
+  {
+    path: '/radioGroup',
+    name: 'TestRadioGroup',
+    component: () => import('@/modules/Test/TestRadioGroup.vue')
+  },
+  // arr
+  {
+    path: '/arr',
+    name: 'TestArr',
+    component: () => import('@/modules/TestNewSome/TestArr.vue')
+  },
+  // inject
+  {
+    path: '/inject',
+    name: 'TestInject',
+    component: () => import('@/modules/TestNewSome/TestModel.vue')
   }
 
 ]
