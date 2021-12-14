@@ -7,6 +7,7 @@
       :disabled="true"
       :label="0"
     />
+
     <my-radio
       v-model="gender"
       :disabled="false"
@@ -52,7 +53,7 @@ export default defineComponent({
     const { ctx } = getCurrentInstance()
     // console.log(ctx)
 
-    const gender = ref(1)
+    const gender = ref(2)
     console.log('gender', gender.value)
 
     // nextTick(() => {

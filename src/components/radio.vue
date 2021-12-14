@@ -1,7 +1,7 @@
 <template>
   <label
     class="radio-main"
-    :class="{'is-disabled': disabled, 'is-checked': modelValue == label}"
+    :class="{'is-disabled': disabled, 'is-checked': model == label}"
     :disabled="disabled"
   >
     <span class="radio-input"></span>
@@ -12,7 +12,6 @@
       :class="{'is-disabled': disabled}"
       :value="label"
       :disabled="disabled"
-      @click="handleClick(model)"
     >
 
     <span class="radio-label">
@@ -28,13 +27,17 @@
 import {
   computed,
   defineComponent,
-  getCurrentInstance
+  getCurrentInstance,
+  nextTick,
+  watch,
+  inject
 } from 'vue'
 import { useStore } from 'vuex'
 
 export default defineComponent({
   name: 'MyRadio',
-  components: {},
+  components: {
+  },
   props: {
     disabled: {
       type: Boolean,
@@ -49,56 +52,42 @@ export default defineComponent({
       default: ''
     }
   },
-  emits: ['update:modelValue'],
+  emits: ['update:modelValue', 'change'],
   setup (props) {
   // Vuex store
     const store = useStore()
 
     // this
     const { proxy } = getCurrentInstance()
-    // console.log(proxy)
 
-    // console.log('props.label', props.label)
+    const groupModelValue = inject('groupModelValue')
+    const changeUpdate = inject('changeUpdate')
 
-    const handleClick = (e) => {
-      // console.log('props.modelValue', props.modelValue)
-      // console.log('e', e)
-      // proxy.$emit('update:modelValue', props.modelValue)
-    }
-
-    const model = computed({
-      get: () => {
-        // console.log('proxy.value', proxy.label)
-        // console.log('model', model)
-        console.log('props.modelValue+++++', props.modelValue)
-        return model
-      },
-      set: (value) => {
-        // 触发父组件的input事件
-        console.log('value-----', value)
-        proxy.$emit('update:modelValue', value)
+    const model = computed(
+      {
+        get: () => {
+          return isGroup() ? groupModelValue.value : props.modelValue
+        },
+        set: (value) => {
+          // 触发父组件的input事件
+          isGroup() ? changeUpdate(value) : proxy.$emit('update:modelValue', value)
+        }
       }
-    })
+    )
+
+    // 判断radio是否被radioGroup包裹
+    const isGroup = () => {
+      // !groupModelValue 将变量groupModelValue改为布尔值，取反
+      // !!groupModelValue，相当于变量groupModelValue改为布尔值
+      return !!groupModelValue
+    }
 
     return {
       model,
-      handleClick
+      groupModelValue,
+      isGroup
     }
   }
-  // computed: {
-  //   model: {
-  //     get () {
-  //       // console.log('proxy.value', this.value)
-  //       return this.value
-  //     },
-  //     set (value) {
-  //       console.log('32131231')
-  //       // 触发父组件的input事件
-  //       console.log('value-----', value)
-  //       this.$emit('update:modelValue', value)
-  //     }
-  //   }
-  // }
 })
 </script>
 
