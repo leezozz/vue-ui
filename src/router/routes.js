@@ -72,6 +72,12 @@ const routes = [
     name: 'TestRadioGroup',
     component: () => import('@/modules/Test/TestRadioGroup.vue')
   },
+  // form-item
+  {
+    path: '/testFormItem',
+    name: 'TestFormItem',
+    component: () => import('@/modules/Test/TestFormItem.vue')
+  },
   // arr
   {
     path: '/arr',
