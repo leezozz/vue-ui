@@ -7,6 +7,7 @@ import myInput from '@/components/input.vue'
 import mySwitch from '@/components/switch.vue'
 import myRadio from '@/components/radio.vue'
 import myRadioGroup from '@/components/radio-group.vue'
+import myFormItem from '@/components/Form/form-item.vue'
 
 const component = {
   install: function (Vue) {
@@ -18,6 +19,7 @@ const component = {
     Vue.component(mySwitch.name, mySwitch)
     Vue.component(myRadio.name, myRadio)
     Vue.component(myRadioGroup.name, myRadioGroup)
+    Vue.component(myFormItem.name, myFormItem)
   }
 }
 
